@@ -1,44 +1,85 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+*,
+*::before,
+*::after {
   margin: 0;
-}
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  color: #444;
-  text-align: center;
-  line-height: 1.5;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-nav,
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
+  padding-top: 1vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5em 1fr 5fr 20vw;
+      grid-template-columns: 0.5em 1fr 5fr 20vw;
+      grid-template-areas: ". logo . link ";
+  background: #a3a3a3;
+  width: 100vw;
 }
 
-h3 {
-  padding-left: 15px;
+nav h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: logo;
+}
+
+nav ul {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: link;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul li {
+  padding-right: 3px;
+}
+
+nav ul li a {
+  font-size: 0.75em;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 header {
-  padding: 10%;
   height: 100vh;
+  display: -ms-grid;
+  display: grid;
+}
+
+header h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+header p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 section {
-  min-height: 200px;
+  height: 50vh;
   padding: 6% 0;
   background-color: #bbb;
 }
@@ -47,35 +88,117 @@ section:nth-child(even) {
   background-color: #ddd;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
+section:nth-child(odd) {
+  background-color: #969595;
 }
 
-.scroll {
-  padding: 60vh;
+.page-2 {
+  height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: flex-end;
-}
-
-li {
-  list-style: none;
-  padding: 0 20px 50px 0;
+footer {
+  background-color: #1f1e1e;
+  color: #ffffff;
+  text-align: center;
 }
 
 .projects {
   height: 100vh;
 }
 
-article {
-  background-color: #bbb;
-  height: 80vh;
+.projects .text {
+  grid-area: text;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40vh;
 }
+
+.projects .text p {
+  text-align: center;
+}
+
+.projects .text ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projects .text ul li {
+  padding: 10px;
+}
+
+.projects .screenshot {
+  grid-area: screenshot;
+  background: #e2d3d3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects .screenshot h3 {
+  text-align: center;
+}
+
+.c-link ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.c-link ul li {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1100px) {
+  nav ul li {
+    padding-right: 25px;
+  }
+  .projects {
+    height: 100vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "text screenshot";
+  }
+  .text {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: text;
+  }
+  .screenshot {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: screenshot;
+    height: 80vh !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

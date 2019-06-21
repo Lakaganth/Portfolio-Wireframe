@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  padding-top: 1vh;
+  display: grid;
+  grid-template-columns: 0.5em 1fr 5fr 20vw;
+  grid-template-areas: ". logo . link ";
+  background: rgb(163, 163, 163);
+  width: 100vw;
+  h3 {
+    grid-area: logo;
+  }
+
+  ul {
+    grid-area: link;
+    display: flex;
+
+    li {
+      padding-right: 3px;
+      a {
+        font-size: 0.75em;
+      }
+    }
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  height: 100vh;
+  display: grid;
+
+  h1 {
+    align-self: center;
+    justify-self: center;
+  }
+  p {
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+section {
+  height: 50vh;
+  padding: 6% 0;
+  background-color: #bbb;
+}
+
+section:nth-child(even) {
+  background-color: #ddd;
+}
+
+section:nth-child(odd) {
+  background-color: rgb(150, 149, 149);
+}
+
+.page-2 {
+  height: 100vh;
+}
+
+footer {
+  background-color: rgb(31, 30, 30);
+  color: #ffffff;
+  text-align: center;
+}
+
+.projects {
+  height: 100vh;
+  .text {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    p {
+      text-align: center;
+    }
+    ul {
+      display: flex;
+
+      li {
+        padding: 10px;
+      }
+    }
+  }
+  .screenshot {
+    grid-area: screenshot;
+    background: rgb(226, 211, 211);
+    display: flex;
+    height: 60vh;
+
+    justify-content: center;
+    align-items: center;
+    h3 {
+      text-align: center;
+    }
+  }
+}
+
+.c-link {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// MEdia Queries
+
+@media (min-width: 1100px) {
+  nav {
+    ul {
+      li {
+        padding-right: 25px;
+      }
+    }
+  }
+  .projects {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "text screenshot";
+  }
+
+  .text {
+    grid-area: text;
+  }
+
+  .screenshot {
+    grid-area: screenshot;
+    height: 80vh !important;
+  }
+}
